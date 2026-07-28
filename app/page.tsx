@@ -1,4 +1,4 @@
-import DailyMessage from "@/components/DailyMessage";
+import DailyMessageSection from "@/components/DailyMessageSection";
 import TodayStudyRecords from "@/components/TodayStudyRecords";
 import Link from "next/link";
 
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="hero-title">
               <p className="hero-label">OUR CHINESE STUDY DIARY</p>
               <h1>我们的中文日记</h1>
-              <p>지원과 재은이 함께 쓰는 중국어 공부 기록장</p>
+              <p>지원과 재은이가 함께 쓰는 중국어 공부 기록장</p>
             </div>
 
             <div className="hero-decoration">
@@ -62,48 +62,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="message-board">
-            <div className="section-heading">
-              <div>
-                <span className="heading-number">01</span>
-
-                <div>
-                  <p>TODAY&apos;S MESSAGE</p>
-                  <h2>오늘의 한마디</h2>
-                </div>
-              </div>
-
-              <button type="button" className="edit-message-button">
-                ✎ 메시지 쓰기
-              </button>
-            </div>
-
-            <div className="message-grid">
-              <DailyMessage
-                name="지원"
-                character="🐰"
-                chineseMessage="今天也不要放弃！"
-                koreanMessage="오늘도 포기하지 말자!"
-                direction="left"
-                characterColor="pink"
-              />
-
-              <div className="friendship-line">
-                <span>♥</span>
-                <div />
-                <span>♥</span>
-              </div>
-
-              <DailyMessage
-                name="재은"
-                character="🦁"
-                chineseMessage="我们一起加油吧！"
-                koreanMessage="우리 같이 힘내자!"
-                direction="right"
-                characterColor="yellow"
-              />
-            </div>
-          </section>
+          <DailyMessageSection />
 
           <section className="study-menu-section">
             <div className="section-heading">

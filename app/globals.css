@@ -2342,3 +2342,203 @@ iframe {
     text-align: left;
   }
 }
+/* ========================================
+   오늘의 한마디 작성
+======================================== */
+
+.daily-message-click-area {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.message-modal-backdrop {
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(69, 57, 48, 0.48);
+  backdrop-filter: blur(4px);
+}
+
+.message-modal {
+  width: min(520px, 100%);
+  padding: 32px;
+  position: relative;
+  border: 3px solid #4c4037;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      rgba(109, 93, 76, 0.05) 1px,
+      transparent 1px
+    ),
+    #fffaf0;
+  background-size: 100% 30px;
+  box-shadow: 9px 10px 0 #4c4037;
+}
+
+.message-modal-tape {
+  width: 110px;
+  height: 28px;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  background: rgba(239, 155, 180, 0.82);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.message-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.message-modal-header p {
+  margin: 0;
+  color: #8f7d6f;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.message-modal-header h2 {
+  margin: 5px 0 0;
+  font-size: 26px;
+}
+
+.message-modal-close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #4c4037;
+  border-radius: 50%;
+  background: #fff;
+  color: #4c4037;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #4c4037;
+}
+
+.message-user-selector {
+  margin: 24px 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.message-user-selector button {
+  min-height: 47px;
+  border: 2px solid #4c4037;
+  border-radius: 14px;
+  background: #fff;
+  color: #4c4037;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.message-user-selector .message-user-active {
+  background: #ef9bb4;
+  box-shadow: 4px 4px 0 #4c4037;
+}
+
+.message-editor-form {
+  display: grid;
+  gap: 17px;
+}
+
+.message-editor-form label {
+  display: grid;
+  gap: 7px;
+}
+
+.message-editor-form label > span {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.message-editor-form textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 13px 15px;
+  resize: vertical;
+  border: 2px solid #4c4037;
+  border-radius: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #4c4037;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.message-editor-form textarea:focus {
+  box-shadow: 4px 4px 0 #ef9bb4;
+}
+
+.message-editor-form label > small {
+  color: #907f72;
+  font-size: 11px;
+  text-align: right;
+}
+
+.message-form-error {
+  margin: 0;
+  color: #c8425b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.message-form-buttons {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 12px;
+}
+
+.message-form-buttons button {
+  min-height: 50px;
+  border: 2px solid #4c4037;
+  border-radius: 14px;
+  color: #4c4037;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #4c4037;
+}
+
+.message-form-buttons button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.message-cancel-button {
+  background: #fff;
+}
+
+.message-save-button {
+  background: #b9dfd3;
+}
+
+@media (max-width: 600px) {
+  .message-modal {
+    padding: 27px 19px 22px;
+    border-radius: 19px;
+  }
+
+  .message-modal-header h2 {
+    font-size: 22px;
+  }
+
+  .message-form-buttons {
+    grid-template-columns: 1fr;
+  }
+}
