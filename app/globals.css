@@ -1635,3 +1635,710 @@ button {
     font-size: 10px;
   }
 }
+/* =========================
+   Mobile Responsive
+========================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    min-width: 0;
+  }
+
+  main {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .container,
+  .page-container,
+  .dashboard-container,
+  .content-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .dashboard-grid,
+  .study-grid,
+  .menu-grid,
+  .record-grid,
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .study-menu-card,
+  .dashboard-card,
+  .record-card,
+  .daily-message-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p,
+  button,
+  input,
+  textarea,
+  select,
+  a {
+    font-size: 16px;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .button-row,
+  .form-row,
+  .header-row,
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .button-row button,
+  .button-row a,
+  .section-header a {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+/* ========================================
+   HSK 단어 공부 페이지
+======================================== */
+
+.hsk-page {
+  min-height: 100vh;
+  padding: 38px 20px;
+  color: #4c4037;
+  background:
+    linear-gradient(rgba(112, 96, 80, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 96, 80, 0.08) 1px, transparent 1px),
+    #f5e4ca;
+  background-size: 24px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hsk-window {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 3px solid #4c4037;
+  border-radius: 24px;
+  background: #fffdf5;
+  box-shadow: 10px 12px 0 rgba(76, 64, 55, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.hsk-window-header {
+  min-height: 58px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #4c4037;
+  background: #ef9bb4;
+}
+
+.hsk-window-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+}
+
+.hsk-window-title span {
+  font-size: 22px;
+}
+
+.hsk-window-controls {
+  display: flex;
+  gap: 9px;
+}
+
+.hsk-window-controls span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #4c4037;
+  border-radius: 50%;
+  background: #fffdf5;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hsk-navigation {
+  min-height: 58px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #4c4037;
+  background: #fffaf0;
+}
+
+.hsk-navigation > a {
+  padding: 8px 14px;
+  border: 2px solid #4c4037;
+  border-radius: 999px;
+  color: #4c4037;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 #4c4037;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hsk-navigation > a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #4c4037;
+}
+
+.hsk-navigation > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.hsk-navigation > div span {
+  color: #8d7e71;
+}
+
+.hsk-page-content {
+  padding: 42px clamp(18px, 5vw, 62px) 55px;
+}
+
+.hsk-page-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  position: relative;
+}
+
+.hsk-heading-number {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 3px solid #4c4037;
+  border-radius: 50%;
+  background: #ef799a;
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 #4c4037;
+}
+
+.hsk-page-heading p,
+.hsk-small-label {
+  margin: 0;
+  color: #8c7767;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hsk-page-heading h1 {
+  margin: 4px 0 5px;
+  font-size: clamp(27px, 4vw, 38px);
+  line-height: 1.2;
+}
+
+.hsk-page-heading > div > span {
+  color: #8d7e71;
+  font-size: 14px;
+}
+
+.hsk-heading-decoration {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  border: 3px solid #4c4037;
+  border-radius: 18px;
+  background: #b9dfd3;
+  font-size: 27px;
+  font-weight: 900;
+  transform: rotate(5deg);
+  box-shadow: 4px 4px 0 #4c4037;
+}
+
+.hsk-quiz-card,
+.hsk-result-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 42px);
+  border: 3px solid #4c4037;
+  border-radius: 24px;
+  background:
+    linear-gradient(rgba(108, 93, 76, 0.045) 1px, transparent 1px),
+    #fff8dc;
+  background-size: 100% 30px;
+  box-shadow: 8px 9px 0 #4c4037;
+  position: relative;
+}
+
+.hsk-card-tape {
+  width: 115px;
+  height: 30px;
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  background: rgba(239, 155, 180, 0.75);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.hsk-quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hsk-quiz-top > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.hsk-quiz-top strong {
+  font-size: 15px;
+}
+
+.hsk-level-badge {
+  padding: 7px 13px;
+  border: 2px solid #4c4037;
+  border-radius: 999px;
+  background: #b9dfd3;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.hsk-progress {
+  height: 12px;
+  margin-top: 15px;
+  overflow: hidden;
+  border: 2px solid #4c4037;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.hsk-progress-bar {
+  height: 100%;
+  border-right: 2px solid #4c4037;
+  border-radius: 999px;
+  background: #ef799a;
+  transition: width 0.3s ease;
+}
+
+.hsk-word-area {
+  padding: 45px 0 30px;
+  text-align: center;
+}
+
+.hsk-category {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f5dce6;
+  color: #735c66;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hsk-word-area h2 {
+  margin: 22px 0 8px;
+  font-family: Arial, "Noto Sans SC", sans-serif;
+  font-size: clamp(58px, 11vw, 90px);
+  line-height: 1.1;
+  letter-spacing: 3px;
+}
+
+.hsk-pinyin {
+  margin: 0;
+  color: #8d7767;
+  font-size: clamp(18px, 3vw, 23px);
+}
+
+.hsk-answer-box {
+  min-height: 105px;
+  margin-top: 34px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #aa9684;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.hsk-answer-box span {
+  margin-bottom: 8px;
+  color: #9b8878;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hsk-answer-box strong {
+  font-size: clamp(21px, 4vw, 28px);
+  line-height: 1.45;
+}
+
+.hsk-answer-visible {
+  border-style: solid;
+  border-color: #4c4037;
+  background: #fff;
+  box-shadow: 4px 4px 0 #ef9bb4;
+}
+
+.hsk-show-answer-button,
+.hsk-restart-button {
+  width: 100%;
+  min-height: 55px;
+  border: 3px solid #4c4037;
+  border-radius: 15px;
+  background: #ef9bb4;
+  color: #4c4037;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #4c4037;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hsk-show-answer-button:hover,
+.hsk-restart-button:hover,
+.hsk-answer-buttons button:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #4c4037;
+}
+
+.hsk-answer-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hsk-answer-buttons button {
+  min-height: 67px;
+  border: 3px solid #4c4037;
+  border-radius: 15px;
+  color: #4c4037;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #4c4037;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hsk-answer-buttons button span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 21px;
+}
+
+.hsk-unknown-button {
+  background: #f5d5df;
+}
+
+.hsk-known-button {
+  background: #bfe3d8;
+}
+
+.hsk-card-tip {
+  margin: 22px 0 0;
+  color: #8d7d70;
+  font-size: 12px;
+  text-align: center;
+}
+
+.hsk-result-card {
+  text-align: center;
+  background: #fff5e8;
+}
+
+.hsk-result-sticker {
+  width: 85px;
+  padding: 9px 5px;
+  position: absolute;
+  top: -18px;
+  right: 30px;
+  border: 2px solid #4c4037;
+  background: #f4c656;
+  font-size: 14px;
+  font-weight: 900;
+  transform: rotate(7deg);
+  box-shadow: 3px 3px 0 #4c4037;
+}
+
+.hsk-result-card h2 {
+  margin: 8px 0 25px;
+  font-size: clamp(26px, 5vw, 36px);
+}
+
+.hsk-score-circle {
+  width: 145px;
+  height: 145px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  border: 3px solid #4c4037;
+  border-radius: 50%;
+  background: #ef9bb4;
+  box-shadow: 6px 6px 0 #4c4037;
+}
+
+.hsk-score-circle strong {
+  font-size: 53px;
+}
+
+.hsk-score-circle span {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.hsk-result-message {
+  color: #77695e;
+  line-height: 1.8;
+}
+
+.hsk-wrong-section {
+  margin: 30px 0 25px;
+  padding: 20px;
+  border: 2px solid #4c4037;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+.hsk-wrong-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 13px;
+}
+
+.hsk-wrong-list {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.hsk-wrong-item {
+  padding: 13px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px dashed #bca997;
+}
+
+.hsk-wrong-item:last-child {
+  border-bottom: 0;
+}
+
+.hsk-wrong-item > div {
+  min-width: 120px;
+}
+
+.hsk-wrong-item strong {
+  display: block;
+  font-size: 22px;
+}
+
+.hsk-wrong-item span {
+  color: #8d7e71;
+  font-size: 12px;
+}
+
+.hsk-wrong-item p {
+  margin: 0;
+  text-align: right;
+  font-size: 14px;
+}
+
+.hsk-restart-button {
+  background: #b9dfd3;
+}
+
+.hsk-footer {
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid #4c4037;
+  background: #ef9bb4;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hsk-footer p {
+  margin: 0;
+}
+
+.hsk-floating-sticker {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  border: 3px solid #4c4037;
+  border-radius: 18px;
+  font-size: 25px;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 #4c4037;
+  z-index: 1;
+}
+
+.hsk-sticker-one {
+  top: 12%;
+  left: 4%;
+  background: #f2c856;
+  transform: rotate(-9deg);
+}
+
+.hsk-sticker-two {
+  right: 4%;
+  bottom: 13%;
+  background: #b9dfd3;
+  transform: rotate(8deg);
+}
+
+.hsk-empty-card {
+  padding: 50px;
+  border: 3px solid #4c4037;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hsk-page {
+    padding: 14px 10px;
+  }
+
+  .hsk-window {
+    border-radius: 17px;
+    box-shadow: 5px 6px 0 rgba(76, 64, 55, 0.25);
+  }
+
+  .hsk-window-header {
+    padding: 0 15px;
+  }
+
+  .hsk-navigation {
+    padding: 10px 14px;
+  }
+
+  .hsk-navigation > div span {
+    display: none;
+  }
+
+  .hsk-page-content {
+    padding: 32px 15px 42px;
+  }
+
+  .hsk-page-heading {
+    align-items: flex-start;
+  }
+
+  .hsk-heading-number {
+    width: 43px;
+    height: 43px;
+  }
+
+  .hsk-heading-decoration {
+    display: none;
+  }
+
+  .hsk-quiz-card,
+  .hsk-result-card {
+    padding: 27px 18px;
+    border-radius: 18px;
+    box-shadow: 5px 6px 0 #4c4037;
+  }
+
+  .hsk-word-area {
+    padding-top: 36px;
+  }
+
+  .hsk-answer-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .hsk-footer {
+    padding: 15px;
+  }
+
+  .hsk-footer span:last-child {
+    display: none;
+  }
+
+  .hsk-floating-sticker {
+    display: none;
+  }
+
+  .hsk-wrong-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hsk-wrong-item p {
+    text-align: left;
+  }
+}

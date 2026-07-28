@@ -118,11 +118,14 @@ export default function Home() {
             </div>
 
             <div className="study-menu-grid">
-              <button type="button" className="study-menu-card">
-                <span className="study-menu-icon">📚</span>
-                <strong>HSK 5급 단어 테스트</strong>
-                <small>오늘의 단어 문제 풀기</small>
-              </button>
+              <Link
+  href="/hsk"
+  className="study-menu-card"
+>
+  <span className="study-menu-icon">📚</span>
+  <strong>HSK 5급 단어 테스트</strong>
+  <small>오늘의 단어 문제 풀기</small>
+</Link>
 
               <button type="button" className="study-menu-card">
                 <span className="study-menu-icon">📖</span>
