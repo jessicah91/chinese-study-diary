@@ -76,19 +76,21 @@ export default function DailyMessageSection() {
       };
 
       data.forEach((message) => {
-        if (
-          message.user_name === "지원" ||
-          message.user_name === "재은"
-        ) {
-          nextMessages[message.user_name] = {
-            user_name: message.user_name,
-            chinese_message:
-              message.chinese_message,
-            korean_message:
-              message.korean_message,
-          };
-        }
-      });
+  if (
+    message.user_name !== "지원" &&
+    message.user_name !== "재은"
+  ) {
+    return;
+  }
+
+  const userName: UserName = message.user_name;
+
+  nextMessages[userName] = {
+    user_name: userName,
+    chinese_message: message.chinese_message,
+    korean_message: message.korean_message,
+  };
+});
 
       setMessages(nextMessages);
     }
